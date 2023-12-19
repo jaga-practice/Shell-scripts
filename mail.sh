@@ -7,7 +7,7 @@ GROUP_NAME=$4
 ALERT_TYPE=$2
 template="/home/centos/templates/disk_usage_mail.html"
 
-final_content=$(sed -e "s/TEAM/$GROUP_NAME/g" -e "s/BODY_CONTENT/$BODY_CONTENT/g" -e "s/ALERT_TYPE?$ALERT_TYPE/g" "$template")
+final_content=$(sed -e "s/TEAM/$GROUP_NAME/g" -e "s/BODY_CONTENT/$BODY_CONTENT/g" -e "s/ALERT_TYPE/$ALERT_TYPE/g" "$template")
 
 echo "final_content : $final_content"
 
