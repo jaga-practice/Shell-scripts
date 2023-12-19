@@ -6,7 +6,7 @@ failure(){
     local msg=$2
     echo failed at "$lineno : $msg"
 }
-trace 'failure $(LINENO) : "$BASH_COMMAND"' ERR
+trap 'failure $(LINENO) : "$BASH_COMMAND"' ERR
 
 User=$(id -u)
 R="e\[31m"
