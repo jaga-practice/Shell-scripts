@@ -10,14 +10,14 @@ trace 'failure $(LINENO) : "$BASH_COMMAND"' ERR
 
 User=$(id -u)
 R="e\[31m"
-G="e\32m"
-N="e\0m"
+G="e\[32m"
+N="e\[0m"
 
 Log_file=Docker_installation.log
 
 if [ $User -ne 0 ]
 then
-echo "Please run the script with root access"
+echo "$R Please run the script with root access $N"
 exit 1
 fi 
 
