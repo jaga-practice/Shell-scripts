@@ -17,12 +17,12 @@ File=home/centos/scripts/keyword
 keyword=$1
 while IFS= read -r line;
 do
- echo($line | grep -q "$keyword")
+ echo($line | tr '[:upper:]' '[:lower:]' < $line | grep -q "$keyword")
 
   if [ $? -ne 0 ]
   then 
     echo "No matching keyword in $line"
     exit 1
-    echo "Given "$keyword" is pesent in $line"
+    echo "Given "$keyword" is present in $line"
   fi
  done <<< "$File"
