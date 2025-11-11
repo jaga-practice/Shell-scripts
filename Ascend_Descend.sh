@@ -3,7 +3,7 @@
 set -eE -o functrace
 failure() {
 local lineno=$1
-lcal msg=$2
+local msg=$2
 echo "failed at $lineno : $msg"
 }
 trap 'failure $(LINENO) : "$BASH_COMMAND"' ERR
