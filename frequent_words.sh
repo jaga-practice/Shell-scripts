@@ -2,7 +2,7 @@
 set -eE -o functrace
 
 failure() {
-    local lineno=41
+    local lineno=$1
     local msg=$2
     echo "failed at $lineno : $msg"
     }
