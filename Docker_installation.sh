@@ -21,13 +21,13 @@ echo "$R Please run the script with root access $N"
 exit 1
 fi 
 
-yum install -y yum-utils &>>$Log_file
-echo -e "$G yumutils...installed $N"
+dnf update -y &>>$Log_file
+echo -e "$G updates...installed $N"
 
-yum-config-manager --add repo https://download.docker.com/linux/centos/docker-ce.repo &>>$Log_file
+dnf config-manager --add repo https://download.docker.com/linux/centos/docker-ce.repo &>>$Log_file
 echo -e "$G Repo...added $N"
 
-yum install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin &>>$Log_file
+dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin &>>$Log_file
 echo -e "$G Packages...installed $N"
 
 systemctl start Docker &>>$Log_file
